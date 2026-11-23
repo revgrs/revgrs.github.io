@@ -1,0 +1,86 @@
+:root {
+  --bg: #040716;
+  --card: #0b1030;
+  --border: #1e2550;
+  --text: #ecf0ff;
+  --muted: #9aa3c7;
+  --cyan: #60e4f0;
+  --pink: #de80e6;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 "Inter", system-ui, -apple-system, sans-serif;
+}
+a { color: var(--cyan); }
+a:hover { color: var(--pink); }
+h1, h2, h3, .btn, .nav a {
+  font-family: "Rajdhani", "Inter", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.nav img { height: 28px; display: block; }
+.nav .links a { color: var(--muted); text-decoration: none; margin-left: 20px; font-weight: 600; }
+.nav .links a:hover { color: var(--cyan); }
+.hero img { width: 100%; display: block; }
+.hero .mobile { display: none; }
+@media (max-width: 700px) {
+  .hero .desktop { display: none; }
+  .hero .mobile { display: block; }
+  .nav .links a { margin-left: 12px; }
+}
+main { max-width: 1100px; margin: 0 auto; padding: 0 16px 48px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 32px 0 48px; }
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text);
+  font-weight: 700;
+  text-decoration: none;
+}
+.btn:hover { border-color: var(--cyan); color: var(--cyan); }
+.btn.primary { background: var(--cyan); border-color: var(--cyan); color: var(--bg); }
+.btn.primary:hover { background: var(--pink); border-color: var(--pink); color: var(--bg); }
+.album {
+  display: grid;
+  grid-template-columns: minmax(0, 360px) 1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+.album img { width: 100%; border-radius: 6px; display: block; }
+.album h2 { margin: 0 0 4px; color: var(--cyan); font-size: 32px; }
+.album .kicker { color: var(--pink); font-weight: 600; margin: 0; letter-spacing: 0.12em; font-size: 14px; }
+.album p { color: var(--muted); }
+.album .buttons { justify-content: flex-start; margin: 16px 0 0; }
+@media (max-width: 700px) { .album { grid-template-columns: 1fr; } }
+.doc { max-width: 760px; margin: 0 auto; padding: 24px 16px 48px; }
+.doc h1 { color: var(--cyan); font-size: 36px; margin-bottom: 0; }
+.doc h2 { color: var(--pink); font-size: 22px; margin-top: 32px; }
+.doc .updated { color: var(--muted); margin-top: 4px; }
+.doc li { margin: 6px 0; }
+footer {
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  padding: 24px 16px;
+  font-size: 14px;
+}
+footer a { color: var(--muted); margin: 0 8px; }
